@@ -23,3 +23,6 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+
+# User Files
+console/
