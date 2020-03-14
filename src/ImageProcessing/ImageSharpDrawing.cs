@@ -1,10 +1,9 @@
-using System;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 
 namespace RayTracingEngine.ImageProcessing
 {
-   public class ImageSharpDrawing : IDrawing, IDisposable
+   public class ImageSharpDrawing : IDrawing
    {
       private Image<Rgba32> _image;
 
