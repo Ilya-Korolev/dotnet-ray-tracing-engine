@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using RayTracingEngine.Helpers;
 using RayTracingEngine.ImageProcessing;
 using RayTracingEngine.Models;
@@ -31,9 +32,9 @@ namespace RayTracingEngine.Core
       {
          var stopwatch = Stopwatch.StartNew();
 
-         RayTracer rayTracer = new RayTracer(scene, _renderParameters);
+         var rayTracer = new RayTracer(scene, _renderParameters);
 
-         for (var y = 0; y < _screenParameters.Height; ++y)
+         Parallel.For(0, _screenParameters.Height, (y) =>
          {
             for (var x = 0; x < _screenParameters.Width; ++x)
             {
@@ -43,7 +44,7 @@ namespace RayTracingEngine.Core
 
                _drawing.SetPixel(x, y, pixelColor);
             }
-         }
+         });
 
          _drawing.Save(_outputParameters.FilePath);
 
