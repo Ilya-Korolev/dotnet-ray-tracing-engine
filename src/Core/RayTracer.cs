@@ -9,8 +9,6 @@ namespace RayTracingEngine.Core
 {
    public class RayTracer
    {
-      private readonly double _delta = 0.00001d;
-
       Scene _scene;
       RenderParameters _renderParameters;
 
@@ -82,7 +80,7 @@ namespace RayTracingEngine.Core
 
          // shadow
          Ray shadowRay = new Ray(intersectionPoint, lightDirection);
-         bool hasShadow = shadowRay.HasIntersection(_scene.Objects, _delta, _renderParameters.MaxDistance);
+         bool hasShadow = shadowRay.HasIntersection(_scene.Objects, double.Epsilon, _renderParameters.MaxDistance);
          if (hasShadow)
             return 0d;
 
