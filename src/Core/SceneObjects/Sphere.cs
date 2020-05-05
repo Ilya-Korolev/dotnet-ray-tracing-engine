@@ -11,7 +11,7 @@ namespace RayTracingEngine.Core.SceneObjects
 
       public Material Material { get; set; }
 
-      public Sphere() {}
+      public Sphere() { }
 
       public Sphere(Vector3d center, double radius)
       {
@@ -24,16 +24,16 @@ namespace RayTracingEngine.Core.SceneObjects
          Vector3d oc = ray.Origin - Center;
 
          double a = ray.Direction * ray.Direction;
-         double b = 2 * oc * ray.Direction;
+         double b = 2d * oc * ray.Direction;
          double c = oc * oc - Radius * Radius;
 
-         double discriminant = b * b - 4 * a * c;
+         double discriminant = b * b - 4d * a * c;
 
          if (discriminant < 0)
             return (null, null);
 
-         double firstDistance = (-b - Math.Sqrt(discriminant)) / (2 * a);
-         double secondDistance = (-b - Math.Sqrt(discriminant)) / (2 * a);
+         double firstDistance = (-b - Math.Sqrt(discriminant)) / (2d * a);
+         double secondDistance = (-b - Math.Sqrt(discriminant)) / (2d * a);
 
          return (firstDistance, secondDistance);
       }
