@@ -8,14 +8,17 @@ namespace RayTracingEngine.Models
       public double Height { get; set; }
       public double ProjectionPlaneD { get; set; }
 
-      public Vector3d Origin { get; set; }
+      public Vector3d CameraPosition { get; set; }
+      public Matrix3d CameraRotation { get; set; }
 
       public ViewportParameters()
       {
          Width = 1d;
          Height = 1d;
          ProjectionPlaneD = 1d;
-         Origin = new Vector3d(0d, 0d, 0d);
+
+         CameraPosition = new Vector3d(0d, 0d, 0d);
+         CameraRotation = Matrix3d.Identity();
       }
    }
 }

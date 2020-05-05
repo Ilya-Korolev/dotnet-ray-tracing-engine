@@ -38,8 +38,8 @@ namespace RayTracingEngine.Core
          {
             for (var x = 0; x < _screenParameters.Width; ++x)
             {
-               var direction = _cameraConverter.ScreenToViewport(x, y);
-               var ray = new Ray(_viewportParameters.Origin, direction);
+               var direction = _viewportParameters.CameraRotation * _cameraConverter.ScreenToViewport(x, y);
+               var ray = new Ray(_viewportParameters.CameraPosition, direction);
                var pixelColor = rayTracer.Trace(ray);
 
                _drawing.SetPixel(x, y, pixelColor);
