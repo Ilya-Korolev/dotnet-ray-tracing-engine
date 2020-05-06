@@ -20,7 +20,7 @@ namespace RayTracingEngine.MathExtra
 
       static public Matrix3d RotationX(double degrees)
       {
-         var radians = degrees * (Math.PI / 180d);
+         var radians =  degrees * Math.PI / 180d;
 
          var cos = Math.Cos(radians);
          var sin = Math.Sin(radians);
@@ -30,7 +30,7 @@ namespace RayTracingEngine.MathExtra
 
       static public Matrix3d RotationY(double degrees)
       {
-         var radians = Math.PI * degrees / 180d;
+         var radians = degrees * Math.PI / 180d;
 
          var cos = Math.Cos(radians);
          var sin = Math.Sin(radians);
@@ -40,7 +40,7 @@ namespace RayTracingEngine.MathExtra
 
       static public Matrix3d RotationZ(double degrees)
       {
-         var radians = degrees * (Math.PI / 180d);
+         var radians = degrees * Math.PI / 180d;
 
          var cos = Math.Cos(radians);
          var sin = Math.Sin(radians);

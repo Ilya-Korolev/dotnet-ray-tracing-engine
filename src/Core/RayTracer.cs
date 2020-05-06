@@ -7,23 +7,23 @@ using RayTracingEngine.Models.Light;
 
 namespace RayTracingEngine.Core
 {
-   public class RayTracer
+   internal class RayTracer
    {
-      Scene _scene;
-      RenderParameters _renderParameters;
+      private Scene _scene;
+      private RenderParameters _renderParameters;
 
-      public RayTracer(Scene scene, RenderParameters renderParameters)
+      internal RayTracer(Scene scene, RenderParameters renderParameters)
       {
          _scene = scene;
          _renderParameters = renderParameters;
       }
 
-      public Color Trace(Ray ray)
+      internal Color Trace(Ray ray)
          => Trace(ray, _renderParameters.ReflectionDepth);
 
       private Color Trace(Ray ray, int reflectionDepth)
       {
-         (ISceneObject closestObject, double? distance) = ray.GetClosestObject(_scene.Objects, _renderParameters.MinDistance, _renderParameters.MaxDistance);
+         (SceneObject closestObject, double? distance) = ray.GetClosestObject(_scene.Objects, _renderParameters.MinDistance, _renderParameters.MaxDistance);
 
          if (closestObject == null)
             return _scene.BackgroundColor;

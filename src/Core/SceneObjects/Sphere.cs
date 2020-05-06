@@ -4,12 +4,10 @@ using RayTracingEngine.Models;
 
 namespace RayTracingEngine.Core.SceneObjects
 {
-   public class Sphere : ISceneObject
+   public class Sphere : SceneObject
    {
       public Vector3d Center { get; set; }
       public double Radius { get; set; }
-
-      public Material Material { get; set; }
 
       public Sphere() { }
 
@@ -19,7 +17,7 @@ namespace RayTracingEngine.Core.SceneObjects
          Radius = radius;
       }
 
-      public (double? firstDistance, double? secondDistance) IntersectRay(Ray ray)
+      override internal (double? firstDistance, double? secondDistance) IntersectRay(Ray ray)
       {
          Vector3d oc = ray.Origin - Center;
 
@@ -38,7 +36,7 @@ namespace RayTracingEngine.Core.SceneObjects
          return (firstDistance, secondDistance);
       }
 
-      public Vector3d GetNormal(Vector3d point)
+      override internal Vector3d GetNormal(Vector3d point)
       {
          Vector3d normal = point - Center;
          normal = normal.Normalize();

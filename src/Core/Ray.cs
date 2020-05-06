@@ -5,23 +5,23 @@ using RayTracingEngine.MathExtra;
 
 namespace RayTracingEngine.Core
 {
-   public struct Ray
+   internal struct Ray
    {
-      public Vector3d Origin { get; set; }
-      public Vector3d Direction { get; set; }
+      internal Vector3d Origin { get; set; }
+      internal Vector3d Direction { get; set; }
 
-      public Ray(Vector3d origin, Vector3d direction)
+      internal Ray(Vector3d origin, Vector3d direction)
       {
          Origin = origin;
          Direction = direction;
       }
 
-      public Vector3d GetPertainPoint(double distantion) => Origin + distantion * Direction;
+      internal Vector3d GetPertainPoint(double distantion) => Origin + distantion * Direction;
 
-      public (ISceneObject closestObject, double? distance) GetClosestObject(List<ISceneObject> sceneObjects, double minDistance, double maxDistance)
+      internal (SceneObject closestObject, double? distance) GetClosestObject(List<SceneObject> sceneObjects, double minDistance, double maxDistance)
       {
          double? closestDistance = null;
-         ISceneObject closestObject = null;
+         SceneObject closestObject = null;
 
          foreach (var sceneObject in sceneObjects)
          {
@@ -47,7 +47,7 @@ namespace RayTracingEngine.Core
          return (closestObject, closestDistance);
       }
 
-      public bool HasIntersection(List<ISceneObject> sceneObjects, double minDistance, double maxDistance)
+      internal bool HasIntersection(List<SceneObject> sceneObjects, double minDistance, double maxDistance)
       {
          foreach (var sceneObject in sceneObjects)
          {

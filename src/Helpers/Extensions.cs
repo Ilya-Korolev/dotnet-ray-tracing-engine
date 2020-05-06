@@ -2,9 +2,9 @@ using System.IO;
 
 namespace RayTracingEngine.Helpers
 {
-   public static class Extensions
+   internal static class Extensions
    {
-      public static string ReplaceInvalidFileNameChars(this string self, char newChar)
+      internal static string ReplaceInvalidFileNameChars(this string self, char newChar)
       {
          var splittedResult = self.Split(Path.GetInvalidFileNameChars());
          var result = string.Join(newChar, splittedResult);
@@ -12,12 +12,12 @@ namespace RayTracingEngine.Helpers
          return result;
       }
 
-      public static bool Between(this double self, double lower, double upper)
+      internal static bool Between(this double self, double lower, double upper)
       {
          return lower <= self && self <= upper;
       }
 
-      public static double Clamp(this double self, double lower, double upper)
+      internal static double Clamp(this double self, double lower, double upper)
       {
          if (self < lower)
             return lower;

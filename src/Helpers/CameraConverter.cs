@@ -3,7 +3,7 @@ using RayTracingEngine.Models;
 
 namespace RayTracingEngine.Helpers
 {
-   public class CameraConverter
+   internal class CameraConverter
    {
       private readonly ScreenParameters _screenParameters;
       private readonly ViewportParameters _viewportParameters;
@@ -13,7 +13,7 @@ namespace RayTracingEngine.Helpers
       private readonly double _viewportToScreenRatioX;
       private readonly double _viewportToScreenRatioY;
 
-      public CameraConverter(ScreenParameters screenParameters, ViewportParameters viewportParameters)
+      internal CameraConverter(ScreenParameters screenParameters, ViewportParameters viewportParameters)
       {
          _viewportParameters = viewportParameters;
          _screenParameters = screenParameters;
@@ -25,7 +25,7 @@ namespace RayTracingEngine.Helpers
          _viewportToScreenRatioY = _viewportParameters.Height / _screenParameters.Height;
       }
 
-      public Vector3d ScreenToViewport(int x, int y)
+      internal Vector3d ScreenToViewport(int x, int y)
       {
          var vX = (-_halfScreenWidth + x) * _viewportToScreenRatioX;
          var vY = (_halfScreenHeight - y) * _viewportToScreenRatioY;
