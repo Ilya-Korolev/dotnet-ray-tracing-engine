@@ -13,5 +13,8 @@ namespace RayTracingEngine.MathExtra
 
       public static implicit operator Vector3d(Vector2d self)
           => new Vector3d(self.X, self.Y, 0d);
+
+      public override string ToString()
+          => $"({X}, {Y})";
    }
 }

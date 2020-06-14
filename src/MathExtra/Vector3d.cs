@@ -65,5 +65,9 @@ namespace RayTracingEngine.MathExtra
 
       public static explicit operator Vector2d(Vector3d self)
           => new Vector2d(self.X, self.Y);
+
+
+      public override string ToString()
+          => $"({X}, {Y}, {Z})";
    }
 }

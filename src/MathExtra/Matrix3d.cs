@@ -20,7 +20,7 @@ namespace RayTracingEngine.MathExtra
 
       static public Matrix3d RotationX(double degrees)
       {
-         var radians =  degrees * Math.PI / 180d;
+         var radians = degrees * Math.PI / 180d;
 
          var cos = Math.Cos(radians);
          var sin = Math.Sin(radians);
@@ -73,5 +73,8 @@ namespace RayTracingEngine.MathExtra
 
          return new Matrix3d(a1, b1, c1, a2, b2, c2, a3, b3, c3);
       }
+
+      public override string ToString()
+         => $"({{{A1}, {B1}, {C1}}}, {{{A2}, {B2}, {C2}}}, {{{A3}, {B3}, {C3}}})";
    }
 }
