@@ -1,4 +1,7 @@
 using System.IO;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("UnitTests")]
 
 namespace RayTracingEngine.Helpers
 {
