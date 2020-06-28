@@ -1,4 +1,4 @@
-using RayTracingEngine.Helpers;
+using System;
 
 namespace RayTracingEngine.ImageProcessing
 {
@@ -9,10 +9,10 @@ namespace RayTracingEngine.ImageProcessing
       private double _b;
       private double _a;
 
-      public double R { get => _r; set => _r = value.Clamp(0d, 1d); }
-      public double G { get => _g; set => _g = value.Clamp(0d, 1d); }
-      public double B { get => _b; set => _b = value.Clamp(0d, 1d); }
-      public double A { get => _a; set => _a = value.Clamp(0d, 1d); }
+      public double R { get => _r; set => _r = Math.Clamp(value, 0d, 1d); }
+      public double G { get => _g; set => _g = Math.Clamp(value, 0d, 1d); }
+      public double B { get => _b; set => _b = Math.Clamp(value, 0d, 1d); }
+      public double A { get => _a; set => _a = Math.Clamp(value, 0d, 1d); }
 
       public Color(double r, double g, double b, double a) : this()
       {

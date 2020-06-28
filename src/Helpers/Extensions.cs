@@ -16,16 +16,5 @@ namespace RayTracingEngine.Helpers
       {
          return lower <= self && self <= upper;
       }
-
-      internal static double Clamp(this double self, double lower, double upper)
-      {
-         if (self < lower)
-            return lower;
-
-         if (self > upper)
-            return upper;
-
-         return self;
-      }
    }
 }

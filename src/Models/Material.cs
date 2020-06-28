@@ -20,7 +20,7 @@ namespace RayTracingEngine.Models
       public double ReflectiveCoefficient
       {
          get => _reflectiveCoefficient;
-         set => _reflectiveCoefficient = value.Clamp(0d, 1d);
+         set => _reflectiveCoefficient = Math.Clamp(value, 0d, 1d);
       }
 
       public Material()
