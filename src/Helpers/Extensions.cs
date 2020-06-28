@@ -12,7 +12,7 @@ namespace RayTracingEngine.Helpers
          return result;
       }
 
-      internal static bool Between(this double self, double lower, double upper)
+      internal static bool IsBetween(this double self, double lower, double upper)
       {
          return lower <= self && self <= upper;
       }

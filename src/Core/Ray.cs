@@ -28,7 +28,7 @@ namespace RayTracingEngine.Core
             (double? firstDistance, double? secondDistance) = sceneObject.IntersectRay(this);
 
             if (firstDistance.HasValue &&
-                firstDistance.Value.Between(minDistance, maxDistance) &&
+                firstDistance.Value.IsBetween(minDistance, maxDistance) &&
                (firstDistance < closestDistance || !closestDistance.HasValue))
             {
                closestDistance = firstDistance;
@@ -36,7 +36,7 @@ namespace RayTracingEngine.Core
             }
 
             if (secondDistance.HasValue &&
-                secondDistance.Value.Between(minDistance, maxDistance) &&
+                secondDistance.Value.IsBetween(minDistance, maxDistance) &&
                (secondDistance < closestDistance || !closestDistance.HasValue))
             {
                closestDistance = secondDistance;
@@ -53,10 +53,10 @@ namespace RayTracingEngine.Core
          {
             (double? firstDistance, double? secondDistance) = sceneObject.IntersectRay(this);
 
-            if (firstDistance.HasValue && firstDistance.Value.Between(minDistance, maxDistance))
+            if (firstDistance.HasValue && firstDistance.Value.IsBetween(minDistance, maxDistance))
                return true;
 
-            if (secondDistance.HasValue && secondDistance.Value.Between(minDistance, maxDistance))
+            if (secondDistance.HasValue && secondDistance.Value.IsBetween(minDistance, maxDistance))
                return true;
          }
 
