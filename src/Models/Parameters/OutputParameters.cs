@@ -5,28 +5,30 @@ namespace RayTracingEngine.Models
 {
    public class OutputParameters
    {
-      private readonly string _fileFormat = "png";
-
-      public string FilePrefix { get; set; }
+      public string FileName { get; set; }
       public bool AddTimeStamp { get; set; }
       public string Directory { get; set; }
+      public ImageFormat ImageFormat { get; set; }
 
       public OutputParameters()
       {
-         FilePrefix = "render";
+         FileName = "render";
          AddTimeStamp = true;
          Directory = @"renders\";
+         ImageFormat = ImageFormat.Png;
       }
 
       public string FilePath
       {
          get
          {
-            var filePath = AddTimeStamp ?
-               $"{FilePrefix}_{DateTime.Now}.{_fileFormat}" :
-               $"{FilePrefix}.{_fileFormat}";
+            var fileExtension = ImageFormat.ToString().ToLower();
 
-            filePath = Directory + filePath.ReplaceInvalidFileNameChars('_');
+            var fileName = AddTimeStamp
+               ? $"{FileName}_{DateTime.Now}.{fileExtension}"
+               : $"{FileName}.{fileExtension}";
+
+            var filePath = Directory + fileName.ReplaceInvalidFileNameChars('_');
 
             return filePath;
          }

@@ -1,5 +1,4 @@
 using System;
-using RayTracingEngine.Helpers;
 using RayTracingEngine.ImageProcessing;
 
 namespace RayTracingEngine.Models
