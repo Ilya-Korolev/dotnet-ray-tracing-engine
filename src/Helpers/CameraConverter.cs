@@ -30,7 +30,7 @@ namespace RayTracingEngine.Helpers
          var vX = (-_halfScreenWidth + x) * _viewportToScreenRatioX;
          var vY = (_halfScreenHeight - y) * _viewportToScreenRatioY;
 
-         return new Vector3d(vX, vY, _viewportParameters.ProjectionPlaneD);
+         return new Vector3d(vX, vY, _viewportParameters.ProjectionPlaneDistance);
       }
    }
 }

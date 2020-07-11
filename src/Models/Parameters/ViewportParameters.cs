@@ -6,7 +6,7 @@ namespace RayTracingEngine.Models
    {
       public double Width { get; set; }
       public double Height { get; set; }
-      public double ProjectionPlaneD { get; set; }
+      public double ProjectionPlaneDistance { get; set; }
 
       public Vector3d CameraPosition { get; set; }
       public Matrix3d CameraRotation { get; set; }
@@ -15,7 +15,7 @@ namespace RayTracingEngine.Models
       {
          Width = 1d;
          Height = 1d;
-         ProjectionPlaneD = 1d;
+         ProjectionPlaneDistance = 1d;
 
          CameraPosition = new Vector3d(0d, 0d, 0d);
          CameraRotation = Matrix3d.Identity();
