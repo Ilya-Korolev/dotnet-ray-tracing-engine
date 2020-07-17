@@ -1,6 +1,5 @@
 using System;
 using RayTracingEngine.MathExtra;
-using RayTracingEngine.Models;
 
 namespace RayTracingEngine.Core.SceneObjects
 {

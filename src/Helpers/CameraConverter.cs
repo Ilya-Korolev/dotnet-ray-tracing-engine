@@ -1,5 +1,8 @@
+using System.Runtime.CompilerServices;
 using RayTracingEngine.MathExtra;
 using RayTracingEngine.Models;
+
+[assembly: InternalsVisibleTo("UnitTests")]
 
 namespace RayTracingEngine.Helpers
 {
