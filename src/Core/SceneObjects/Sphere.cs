@@ -1,5 +1,8 @@
 using System;
+using System.Runtime.CompilerServices;
 using RayTracingEngine.MathExtra;
+
+[assembly: InternalsVisibleTo("UnitTests")]
 
 namespace RayTracingEngine.Core.SceneObjects
 {
