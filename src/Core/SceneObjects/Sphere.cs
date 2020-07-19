@@ -38,7 +38,7 @@ namespace RayTracingEngine.Core.SceneObjects
       override internal Vector3d GetNormal(Vector3d point)
       {
          Vector3d normal = point - Center;
-         normal = normal.Normalize();
+         normal = normal.Normalized();
 
          return normal;
       }

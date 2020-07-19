@@ -64,7 +64,7 @@ namespace RayTracingEngine.MathExtra
           => new Vector3d(-self.X, -self.Y, -self.Z);
 
 
-      public Vector3d Normalize()
+      public Vector3d Normalized()
       {
          if (Length == 0d)
             return this;

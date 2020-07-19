@@ -230,7 +230,7 @@ namespace UnitTests
       [MemberData(nameof(NormalizeVectorData))]
       public void Normalize_Vector_ReturnsUnitVector(Vector3d self, double expected)
       {
-         var result = self.Normalize();
+         var result = self.Normalized();
 
          Assert.Equal(expected, result.Length);
       }
