@@ -65,7 +65,12 @@ namespace RayTracingEngine.MathExtra
 
 
       public Vector3d Normalize()
-          => this / Length;
+      {
+         if (Length == 0d)
+            return this;
+
+         return this / Length;
+      }
 
       public Vector3d Reflect(Vector3d normal)
           => 2d * normal * (normal * this) - this;
