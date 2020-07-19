@@ -9,8 +9,10 @@ namespace RayTracingEngine.Core
 {
    internal class RayTracer
    {
-      private Scene _scene;
-      private RenderParameters _renderParameters;
+      private const double Delta = 0.000001d;
+
+      private readonly Scene _scene;
+      private readonly RenderParameters _renderParameters;
 
       internal RayTracer(Scene scene, RenderParameters renderParameters)
       {
@@ -19,11 +21,11 @@ namespace RayTracingEngine.Core
       }
 
       internal Color Trace(Ray ray)
-         => Trace(ray, _renderParameters.ReflectionDepth);
+         => Trace(ray, _renderParameters.MinDistance, _renderParameters.ReflectionDepth);
 
-      private Color Trace(Ray ray, int reflectionDepth)
+      private Color Trace(Ray ray, double minDistance, int reflectionDepth)
       {
-         (SceneObject closestObject, double? distance) = ray.GetClosestObject(_scene.Objects, _renderParameters.MinDistance, _renderParameters.MaxDistance);
+         (SceneObject closestObject, double? distance) = ray.GetClosestObject(_scene.Objects, minDistance, _renderParameters.MaxDistance);
 
          if (closestObject == null)
             return _scene.BackgroundColor;
@@ -42,7 +44,7 @@ namespace RayTracingEngine.Core
          Vector3d reflection = viewDirection.Reflect(normal);
          Ray reflectedRay = new Ray(intersectionPoint, reflection);
 
-         Color reflectedColor = Trace(reflectedRay, reflectionDepth - 1);
+         Color reflectedColor = Trace(reflectedRay, RayTracer.Delta, reflectionDepth - 1);
 
          return localColor.WithIntensity(1d - closestObject.Material.ReflectiveCoefficient) + reflectedColor.WithIntensity(closestObject.Material.ReflectiveCoefficient);
       }
@@ -80,7 +82,7 @@ namespace RayTracingEngine.Core
 
          // shadow
          Ray shadowRay = new Ray(intersectionPoint, lightDirection);
-         bool hasShadow = shadowRay.HasIntersection(_scene.Objects, double.Epsilon, _renderParameters.MaxDistance);
+         bool hasShadow = shadowRay.HasIntersection(_scene.Objects, RayTracer.Delta, _renderParameters.MaxDistance);
          if (hasShadow)
             return 0d;
 
