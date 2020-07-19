@@ -30,7 +30,7 @@ namespace RayTracingEngine.Core.SceneObjects
             return (null, null);
 
          double firstDistance = (-b - Math.Sqrt(discriminant)) / (2d * a);
-         double secondDistance = (-b - Math.Sqrt(discriminant)) / (2d * a);
+         double secondDistance = (-b + Math.Sqrt(discriminant)) / (2d * a);
 
          return (firstDistance, secondDistance);
       }
