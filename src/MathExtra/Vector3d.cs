@@ -4,18 +4,26 @@ namespace RayTracingEngine.MathExtra
 {
    public struct Vector3d
    {
-      public double X { get; set; }
-      public double Y { get; set; }
-      public double Z { get; set; }
+      private double _x;
+      private double _y;
+      private double _z;
+      private double _length;
 
-      public double Length { get => Math.Sqrt(this * this); }
+      public double X { get => _x; set { _x = value; updateLength(); } }
+      public double Y { get => _y; set { _y = value; updateLength(); } }
+      public double Z { get => _z; set { _z = value; updateLength(); } }
+      public double Length { get => _length; }
 
-      public Vector3d(double x, double y, double z)
+      public Vector3d(double x, double y, double z) : this()
       {
-         X = x;
-         Y = y;
-         Z = z;
+         _x = x;
+         _y = y;
+         _z = z;
+         updateLength();
       }
+
+      private void updateLength()
+         => _length = Math.Sqrt(this * this);
 
       // vector-vector
       public static Vector3d operator +(Vector3d left, Vector3d right)
