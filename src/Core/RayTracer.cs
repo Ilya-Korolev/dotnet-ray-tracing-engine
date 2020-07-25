@@ -30,7 +30,7 @@ namespace RayTracingEngine.Core
          if (closestObject == null)
             return _scene.BackgroundColor;
 
-         Vector3d intersectionPoint = ray.GetPertainPoint(distance.Value);
+         Vector3d intersectionPoint = ray.GetPoint(distance.Value);
          Vector3d normal = closestObject.GetNormal(intersectionPoint);
          Vector3d viewDirection = -ray.Direction;
 

@@ -19,7 +19,7 @@ namespace RayTracingEngine.Core
          Direction = direction;
       }
 
-      internal Vector3d GetPertainPoint(double distance) => Origin + distance * Direction;
+      internal Vector3d GetPoint(double distance) => Origin + distance * Direction;
 
       internal (SceneObject closestObject, double? distance) GetClosestObject(List<SceneObject> sceneObjects, double minDistance, double maxDistance)
       {
