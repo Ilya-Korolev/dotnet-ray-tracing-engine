@@ -64,16 +64,19 @@ namespace RayTracingEngine.Core
          if (light is AmbientLight)
             return light.Intensity;
 
-         Vector3d lightDirection;
+         Vector3d oppositeLightDirection;
+         double maxDistance;
 
          switch (light)
          {
             case DirectionalLight directionalLight:
-               lightDirection = directionalLight.Direction;
+               oppositeLightDirection = -directionalLight.Direction;
+               maxDistance = double.PositiveInfinity;
                break;
 
             case PointLight pointLight:
-               lightDirection = pointLight.Position - intersectionPoint;
+               oppositeLightDirection = pointLight.Position - intersectionPoint;
+               maxDistance = 1d;
                break;
 
             default:
@@ -81,22 +84,22 @@ namespace RayTracingEngine.Core
          }
 
          // shadow
-         Ray shadowRay = new Ray(intersectionPoint, lightDirection);
-         bool hasShadow = shadowRay.HasIntersection(_scene.Objects, RayTracer.Delta, _renderParameters.MaxDistance);
+         Ray shadowRay = new Ray(intersectionPoint, oppositeLightDirection);
+         bool hasShadow = shadowRay.HasIntersection(_scene.Objects, RayTracer.Delta, maxDistance);
          if (hasShadow)
             return 0d;
 
          double intensity = 0d;
 
          // diffuse
-         double nl = normal * lightDirection;
-         if (nl > 0)
+         double nl = normal * oppositeLightDirection;
+         if (nl > 0d)
             intensity += light.Intensity * nl / (normal.Length * intersectionPoint.Length);
 
          // specular
-         Vector3d lightReflection = lightDirection.Reflect(normal);
+         Vector3d lightReflection = oppositeLightDirection.Reflect(normal);
          double rv = lightReflection * viewDirection;
-         if (rv > 0)
+         if (rv > 0d)
             intensity += light.Intensity * Math.Pow(rv / (lightReflection.Length * viewDirection.Length), specularExponent);
 
          return intensity;
