@@ -5,7 +5,7 @@ namespace RayTracingEngine.Core.SceneObjects
 {
     public abstract class SceneObject
     {
-        public Material Material { get; set; }
+        public Material Material { get; set; } = new Material();
 
         internal abstract (double? firstDistance, double? secondDistance) IntersectRay(Ray ray);
 
