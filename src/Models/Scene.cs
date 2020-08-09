@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using RayTracingEngine.Core.SceneObjects;
+using RayTracingEngine.Core;
 using RayTracingEngine.ImageProcessing;
-using RayTracingEngine.Models.Light;
 
 namespace RayTracingEngine.Models
 {

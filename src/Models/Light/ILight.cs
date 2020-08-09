@@ -1,4 +1,4 @@
-namespace RayTracingEngine.Models.Light
+namespace RayTracingEngine.Models
 {
    public interface ILight
    {

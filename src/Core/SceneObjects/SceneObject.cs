@@ -1,7 +1,7 @@
 using RayTracingEngine.MathExtra;
 using RayTracingEngine.Models;
 
-namespace RayTracingEngine.Core.SceneObjects
+namespace RayTracingEngine.Core
 {
     public abstract class SceneObject
     {

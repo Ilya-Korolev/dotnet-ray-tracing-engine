@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using RayTracingEngine.Core;
-using RayTracingEngine.Core.SceneObjects;
 using RayTracingEngine.MathExtra;
 using Xunit;
 

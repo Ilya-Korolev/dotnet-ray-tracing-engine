@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using RayTracingEngine.Core.SceneObjects;
 using RayTracingEngine.Helpers;
 using RayTracingEngine.MathExtra;
 

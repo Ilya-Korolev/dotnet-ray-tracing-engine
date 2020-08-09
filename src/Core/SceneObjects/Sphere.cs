@@ -4,7 +4,7 @@ using RayTracingEngine.MathExtra;
 
 [assembly: InternalsVisibleTo("UnitTests")]
 
-namespace RayTracingEngine.Core.SceneObjects
+namespace RayTracingEngine.Core
 {
    public class Sphere : SceneObject
    {

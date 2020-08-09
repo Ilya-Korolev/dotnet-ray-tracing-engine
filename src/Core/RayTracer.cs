@@ -1,9 +1,7 @@
 using System;
-using RayTracingEngine.Core.SceneObjects;
 using RayTracingEngine.ImageProcessing;
 using RayTracingEngine.MathExtra;
 using RayTracingEngine.Models;
-using RayTracingEngine.Models.Light;
 
 namespace RayTracingEngine.Core
 {
