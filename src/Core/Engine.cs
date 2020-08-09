@@ -9,29 +9,26 @@ namespace RayTracingEngine.Core
 {
    public class Engine
    {
-      private readonly OutputParameters _outputParameters;
       private readonly ScreenParameters _screenParameters;
       private readonly ViewportParameters _viewportParameters;
       private readonly RenderParameters _renderParameters;
 
       private readonly CameraConverter _cameraConverter;
-      private readonly IDrawing _drawing;
 
-      public Engine(OutputParameters outputParameters, ScreenParameters screenParameters, ViewportParameters viewportParameters, RenderParameters renderParameters)
+      public Engine(ScreenParameters screenParameters, ViewportParameters viewportParameters, RenderParameters renderParameters)
       {
          _screenParameters = screenParameters;
-         _outputParameters = outputParameters;
          _viewportParameters = viewportParameters;
          _renderParameters = renderParameters;
 
          _cameraConverter = new CameraConverter(_screenParameters, _viewportParameters);
-         _drawing = new ImageSharpDrawing(_screenParameters.Width, _screenParameters.Height);
       }
 
-      public void Render(Scene scene)
+      public IDrawing Render(Scene scene)
       {
          var stopwatch = Stopwatch.StartNew();
 
+         var drawing = new ImageSharpDrawing(_screenParameters.Width, _screenParameters.Height);
          var rayTracer = new RayTracer(scene, _renderParameters);
 
          Parallel.For(0, _screenParameters.Height, (y) =>
@@ -42,13 +39,13 @@ namespace RayTracingEngine.Core
                var ray = new Ray(_viewportParameters.CameraPosition, direction);
                var pixelColor = rayTracer.Trace(ray);
 
-               _drawing.SetPixel(x, y, pixelColor);
+               drawing.SetPixel(x, y, pixelColor);
             }
          });
 
-         _drawing.Save(_outputParameters.FilePath);
-
          Console.WriteLine($"elapsed {stopwatch.ElapsedMilliseconds / 1000d} sec");
+
+         return drawing;
       }
    }
 }
