@@ -4,9 +4,17 @@ namespace RayTracingEngine.MathExtra
 {
    public struct Matrix3d
    {
-      public double A1, B1, C1;
-      public double A2, B2, C2;
-      public double A3, B3, C3;
+      public double A1 { get; set; }
+      public double B1 { get; set; }
+      public double C1 { get; set; }
+
+      public double A2 { get; set; }
+      public double B2 { get; set; }
+      public double C2 { get; set; }
+
+      public double A3 { get; set; }
+      public double B3 { get; set; }
+      public double C3 { get; set; }
 
       public Matrix3d(double a1, double b1, double c1, double a2, double b2, double c2, double a3, double b3, double c3)
       {
