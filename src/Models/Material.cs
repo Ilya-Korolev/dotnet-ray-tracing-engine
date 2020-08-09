@@ -13,7 +13,7 @@ namespace RayTracingEngine.Models
       public double SpecularExponent
       {
          get => _specularExponent;
-         set => _specularExponent = Math.Max(0d, value);
+         set => _specularExponent = value;
       }
 
       public double ReflectiveCoefficient

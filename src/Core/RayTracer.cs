@@ -97,6 +97,9 @@ namespace RayTracingEngine.Core
             intensity += light.Intensity * nl / (normal.Length * intersectionPoint.Length);
 
          // specular
+         if (specularExponent < 0d)
+            return intensity;
+
          Vector3d lightReflection = oppositeLightDirection.Reflect(normal);
          double rv = lightReflection * viewDirection;
          if (rv > 0d)
