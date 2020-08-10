@@ -2,11 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+
+    <PackageId>RayTracingEngine</PackageId>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionSuffix>alpha2</VersionSuffix>
+    <Authors>Ilya Korolev</Authors>
+    <PackageTags>Ray Tracing</PackageTags>
+    <Description>.Net Ray Tracing Engine is a simple CPU ray tracing library.</Description>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/Ilya-Korolev/dotnet-ray-tracing-engine</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0" />
     <PackageReference Include="System.IO.Abstractions" Version="12.1.1" />
+
+    <None Include="..\LICENSE.md" Pack="true" PackagePath=""/>
   </ItemGroup>
 
 </Project>
