@@ -6,16 +6,9 @@ namespace RayTracingEngine.Models
    public class Material
    {
       private double _reflectiveCoefficient;
-      private double _specularExponent;
 
       public Color Color { get; set; }
-
-      public double SpecularExponent
-      {
-         get => _specularExponent;
-         set => _specularExponent = value;
-      }
-
+      public double SpecularExponent { get; set; }
       public double ReflectiveCoefficient
       {
          get => _reflectiveCoefficient;
