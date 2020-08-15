@@ -58,25 +58,25 @@ var scene = new Scene
   }
 };
 
-// Create a Engine instance
- var engine = new Engine(
-    new ScreenParameters
-    {
-       Width = 1920,
-       Height = 1080
-    },
-    new ViewportParameters
-    {
-       Width = 2d,
-       Height = 1d,
-       ProjectionPlaneDistance = 1d,
-       CameraRotation = Matrix3d.RotationZ(-45d)
-    },
-    new RenderParameters
-    {
-       ReflectionDepth = 7
-    }
- );
+// Create an Engine instance
+var engine = new Engine(
+   new ScreenParameters
+   {
+      Width = 1920,
+      Height = 1080
+   },
+   new ViewportParameters
+   {
+      Width = 2d,
+      Height = 1d,
+      ProjectionPlaneDistance = 1d,
+      CameraRotation = Matrix3d.RotationZ(-45d)
+   },
+   new RenderParameters
+   {
+      ReflectionDepth = 7
+   }
+);
 
 // Render an image
 var drawing = engine.Render(scene);
