@@ -36,7 +36,7 @@ namespace RayTracingEngine.Core
 
          Color localColor = closestObject.Material.Color.WithIntensity(lightIntensity);
 
-         if (reflectionDepth <= 0)
+         if (reflectionDepth <= 0 || closestObject.Material.ReflectiveCoefficient == 0d)
             return localColor;
 
          Vector3d reflection = viewDirection.Reflect(normal);
