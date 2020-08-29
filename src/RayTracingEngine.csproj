@@ -5,12 +5,17 @@
 
     <PackageId>RayTracingEngine</PackageId>
     <VersionPrefix>1.0.0</VersionPrefix>
-    <VersionSuffix>alpha2</VersionSuffix>
+    <VersionSuffix></VersionSuffix>
     <Authors>Ilya Korolev</Authors>
     <PackageTags>Ray Tracing</PackageTags>
     <Description>.Net Ray Tracing Engine is a simple CPU ray tracing library.</Description>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <RepositoryUrl>https://github.com/Ilya-Korolev/dotnet-ray-tracing-engine</RepositoryUrl>
+    <PackageReleaseNotes>
+      - Added documentation comments
+      - Performance improvement when the ReflectiveCoefficient is 0
+      - A debug console line 'elapsed time ...' is not shown anymore
+    </PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
