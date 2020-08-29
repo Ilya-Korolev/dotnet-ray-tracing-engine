@@ -1,5 +1,3 @@
-using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using RayTracingEngine.Helpers;
 using RayTracingEngine.ImageProcessing;
@@ -26,8 +24,6 @@ namespace RayTracingEngine.Core
 
       public IDrawing Render(Scene scene)
       {
-         var stopwatch = Stopwatch.StartNew();
-
          var drawing = new ImageSharpDrawing(_screenParameters.Width, _screenParameters.Height);
          var rayTracer = new RayTracer(scene, _renderParameters);
 
@@ -42,8 +38,6 @@ namespace RayTracingEngine.Core
                drawing.SetPixel(x, y, pixelColor);
             }
          });
-
-         Console.WriteLine($"elapsed {stopwatch.ElapsedMilliseconds / 1000d} sec");
 
          return drawing;
       }
