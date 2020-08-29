@@ -28,6 +28,7 @@ namespace RayTracingEngine.Helpers
          _viewportToScreenRatioY = _viewportParameters.Height / _screenParameters.Height;
       }
 
+      /// <summary> Transforms position from screen space into viewport space. </summary>
       internal Vector3d ScreenToViewport(int x, int y)
       {
          var vX = (-_halfScreenWidth + x) * _viewportToScreenRatioX;
