@@ -3,7 +3,7 @@ using RayTracingEngine.Models;
 
 namespace RayTracingEngine.Helpers
 {
-   public class OutputPath
+   public static class OutputPath
    {
       public static string Build(string fileName, string directory, ImageFormat imageFormat, bool addTimeStamp)
       {
