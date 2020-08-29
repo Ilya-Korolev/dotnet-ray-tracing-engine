@@ -16,7 +16,7 @@ namespace RayTracingEngine.Models
       /// <summary> The collection of lights </summary>
       public List<ILight> Lights { get; set; }
 
-      /// <summary> Initializes a new instance of Scene class. </summary>
+      /// <summary> Initializes a new instance of the Scene class. </summary>
       public Scene()
       {
          BackgroundColor = new Color(0d, 0d, 0d, 1d);

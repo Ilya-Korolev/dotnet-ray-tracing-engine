@@ -9,7 +9,7 @@ namespace RayTracingEngine.MathExtra
       /// <summary> The Y component of the vector. </summary>
       public double Y { get; set; }
 
-      /// <summary> Initializes a new instance of Vector2d class with given X and Y components. </summary>
+      /// <summary> Initializes a new instance of the Vector2d class with given X and Y components. </summary>
       public Vector2d(double x, double y)
       {
          X = x;

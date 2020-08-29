@@ -20,7 +20,7 @@ namespace RayTracingEngine.Models
       /// <summary> The rotation of the camera. </summary>
       public Matrix3d CameraRotation { get; set; }
 
-      /// <summary> Initializes a new instance of ScreenParameters class. </summary>
+      /// <summary> Initializes a new instance of the ScreenParameters class. </summary>
       public ViewportParameters()
       {
          Width = 1d;

@@ -12,7 +12,7 @@ namespace RayTracingEngine.Models
       /// <summary> The furthest distance relative to the camera that drawing will occur. </summary>
       public double MaxDistance { get; set; }
 
-      /// <summary> Initializes a new instance of RenderParameters class. </summary>
+      /// <summary> Initializes a new instance of the RenderParameters class. </summary>
       public RenderParameters()
       {
          ReflectionDepth = 5;

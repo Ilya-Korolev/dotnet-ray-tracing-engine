@@ -29,7 +29,7 @@ namespace RayTracingEngine.Models
          set => _reflectiveCoefficient = Math.Clamp(value, 0d, 1d);
       }
 
-      /// <summary> Initializes a new instance of Material class. </summary>
+      /// <summary> Initializes a new instance of the Material class. </summary>
       public Material()
       {
          Color = new Color(0d, 0d, 0d, 1d);

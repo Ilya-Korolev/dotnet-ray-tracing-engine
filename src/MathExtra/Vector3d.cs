@@ -22,7 +22,7 @@ namespace RayTracingEngine.MathExtra
       /// <summary> The length of the vector. </summary> 
       public double Length { get => _length; }
 
-      /// <summary> Initializes a new instance of Vector3d class with given X, Y, Z components. </summary>
+      /// <summary> Initializes a new instance of the Vector3d class with given X, Y, Z components. </summary>
       public Vector3d(double x, double y, double z) : this()
       {
          _x = x;

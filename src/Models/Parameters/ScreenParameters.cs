@@ -9,7 +9,7 @@ namespace RayTracingEngine.Models
       /// <summary> The height of the output image in pixels. </summary>
       public int Height { get; set; }
 
-      /// <summary> Initializes a new instance of ScreenParameters class. </summary>
+      /// <summary> Initializes a new instance of the ScreenParameters class. </summary>
       public ScreenParameters()
       {
          Width = 1920;
