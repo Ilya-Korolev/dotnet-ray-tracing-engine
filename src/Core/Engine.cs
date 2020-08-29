@@ -5,6 +5,7 @@ using RayTracingEngine.Models;
 
 namespace RayTracingEngine.Core
 {
+   /// <summary> A class which represents a methods for render images using a ray-tracing algorithm. </summary>
    public class Engine
    {
       private readonly ScreenParameters _screenParameters;
@@ -13,6 +14,7 @@ namespace RayTracingEngine.Core
 
       private readonly CameraConverter _cameraConverter;
 
+      /// <summary> Creates a new instance of the Engine class with the given parameters. </summary>
       public Engine(ScreenParameters screenParameters, ViewportParameters viewportParameters, RenderParameters renderParameters)
       {
          _screenParameters = screenParameters;
@@ -22,6 +24,7 @@ namespace RayTracingEngine.Core
          _cameraConverter = new CameraConverter(_screenParameters, _viewportParameters);
       }
 
+      /// <summary> Renders the given scene. </summary>
       public IDrawing Render(Scene scene)
       {
          var drawing = new ImageSharpDrawing(_screenParameters.Width, _screenParameters.Height);

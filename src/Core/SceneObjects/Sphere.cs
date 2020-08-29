@@ -6,13 +6,19 @@ using RayTracingEngine.MathExtra;
 
 namespace RayTracingEngine.Core
 {
+   /// <summary> A class which represents a sphere. </summary>
    public class Sphere : SceneObject
    {
+      /// <summary> The center of the sphere. </summary>
       public Vector3d Center { get; set; }
+
+      /// <summary> The radius of the sphere. </summary>
       public double Radius { get; set; }
 
+      /// <summary> Creates a new instance of the Sphere class. </summary>
       public Sphere() { }
 
+      /// <summary> Creates a new instance of the Sphere class with the given center and radius. </summary>
       public Sphere(Vector3d center, double radius)
       {
          Center = center;
